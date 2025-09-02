@@ -11,7 +11,7 @@ class Jwt {
     private $key;
     
     public function __construct() {
-        $this->key = 'your_secret_key';
+        $this->key = 'secret key';
         $this->algorithm = 'HS256';
     }
     
@@ -21,7 +21,7 @@ class Jwt {
             'aud' => 'http://localhost:3000',
             'iat' => time(),
             'nbf' => time(),
-            'exp' => time() + (60 * 60), // 1 hour
+            'exp' => time() + (60 * 60),
             'data' => $data
         ];
         

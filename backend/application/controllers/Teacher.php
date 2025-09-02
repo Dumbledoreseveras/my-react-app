@@ -68,7 +68,6 @@ class Teacher extends CI_Controller {
             return;
         }
         
-        // Create user data
         $user_data = array(
             'email' => $this->input->post('email'),
             'first_name' => $this->input->post('first_name'),
@@ -76,7 +75,6 @@ class Teacher extends CI_Controller {
             'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
         );
         
-        // Create user
         $user_id = $this->User_model->create($user_data);
         
         if (!$user_id) {
@@ -90,7 +88,6 @@ class Teacher extends CI_Controller {
             return;
         }
         
-        // Create teacher data
         $teacher_data = array(
             'user_id' => $user_id,
             'university_name' => $this->input->post('university_name'),
@@ -99,7 +96,6 @@ class Teacher extends CI_Controller {
             'department' => $this->input->post('department')
         );
         
-        // Create teacher
         $teacher_id = $this->Teacher_model->create($teacher_data);
         
         if ($teacher_id) {

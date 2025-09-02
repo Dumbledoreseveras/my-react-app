@@ -32,7 +32,6 @@ class Auth extends CI_Controller {
             return;
         }
         
-        // Create user data
         $user_data = array(
             'email' => $this->input->post('email'),
             'first_name' => $this->input->post('first_name'),
@@ -40,7 +39,6 @@ class Auth extends CI_Controller {
             'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
         );
         
-        // Create user
         $user_id = $this->User_model->create($user_data);
         
         if ($user_id) {
